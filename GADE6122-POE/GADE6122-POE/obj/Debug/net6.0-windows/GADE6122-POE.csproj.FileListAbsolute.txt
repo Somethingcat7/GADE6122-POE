@@ -1,0 +1,17 @@
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\bin\Debug\net6.0-windows\GADE6122-POE.exe
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\bin\Debug\net6.0-windows\GADE6122-POE.deps.json
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\bin\Debug\net6.0-windows\GADE6122-POE.runtimeconfig.json
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\bin\Debug\net6.0-windows\GADE6122-POE.dll
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\bin\Debug\net6.0-windows\GADE6122-POE.pdb
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\GADE6122-POE.csproj.AssemblyReference.cache
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\GADE6122_POE.frmGame.resources
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\GADE6122-POE.csproj.GenerateResource.cache
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\GADE6122-POE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\GADE6122-POE.AssemblyInfoInputs.cache
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\GADE6122-POE.AssemblyInfo.cs
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\GADE6122-POE.csproj.CoreCompileInputs.cache
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\GADE6122-POE.dll
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\refint\GADE6122-POE.dll
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\GADE6122-POE.pdb
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\GADE6122-POE.genruntimeconfig.cache
+C:\Users\somet\AppData\Local\GitHubDesktop\app-2.9.3\GADE6122-POE\GADE6122-POE\GADE6122-POE\obj\Debug\net6.0-windows\ref\GADE6122-POE.dll
