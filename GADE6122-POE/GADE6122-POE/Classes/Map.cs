@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using GADE6122_POE.Tiles;
 using GADE6122_POE.Characters;
+using GADE6122_POE.Classes.Characters;
+using GADE6122_POE.Classes.Items;
 
 namespace GADE6122_POE.Classes
 {
@@ -37,7 +39,7 @@ namespace GADE6122_POE.Classes
         public int MapHeight { get { return mapHeight; } set { mapHeight = value; } }
 
         //Constructor for map class
-        public Map(int MinWidth, int MaxWidth, int MinHeight, int MaxHeight, int NumEnemies)
+        public Map(int MinWidth, int MaxWidth, int MinHeight, int MaxHeight, int NumEnemies, int GoldAmount)
         {
             Random random = new Random();
 
@@ -129,7 +131,24 @@ namespace GADE6122_POE.Classes
                         randomY = random.Next(1, tilesMap.GetLength(1));
                     } while (isTileOpen(randomX, randomY));
 
-                    return new Swamp_Creature(randomX, randomY);
+                    int num = random.Next(0,2);
+                    switch (num)
+                    {
+                        case 0:
+                            return new Swamp_Creature(randomX, randomY);
+                        case 1:
+                            return new Mage(randomX, randomY);
+                        default:
+                            return null;
+                    }
+
+                case Tile.TileType.Gold:
+                    do
+                    {
+                        randomX = random.Next(1, tilesMap.GetLength(0));
+                        randomY = random.Next(1, tilesMap.GetLength(1));
+                    } while (isTileOpen(randomX,randomY));
+                    return new Gold(randomX, randomY);
 
                 //Create empty tile in map
                 case Tile.TileType.Empty:

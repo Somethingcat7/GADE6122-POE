@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GADE6122_POE.Classes;
 using GADE6122_POE.Characters;
 using GADE6122_POE.Tiles;
-using GADE6122_POE.Classes;
+using GADE6122_POE.Classes.Characters;
+using GADE6122_POE.Classes.Items;
+
 
 namespace GADE6122_POE.Classes
 {
@@ -24,6 +27,8 @@ namespace GADE6122_POE.Classes
         private static readonly char emptyTile = ' ';
         private static readonly char obsTile = 'X';
         private static readonly char smpMonTile = 'S';
+        private static readonly char mageTile = 'M';
+        private static readonly char goldTile = '$';
 
         public override string ToString()
         {
@@ -52,16 +57,20 @@ namespace GADE6122_POE.Classes
                         chrMap[i, j] = playerTile;
                     }
 
-                    //Enemy tile placed
+                    //Swamp Creature tile placed
                     if (map.TilesMap[i, j].GetType() == typeof(Swamp_Creature))
                     {
                         chrMap[i, j] = smpMonTile;
                     }
-
-                    //Enemy tile placed
-                    if (map.TilesMap[i, j].GetType() == typeof(Mage))
+                    //Mage tile placed
+                    if (map.TilesMap[i,j].GetType() == typeof(Mage))
                     {
-                        chrMap[i, j] = smpMonTile;
+                        chrMap[i, j] = mageTile;
+                    }
+                    //Gold tile placed
+                    if (map.TilesMap[i,j].GetType() == typeof(Gold))
+                    {
+                        chrMap[i, j] = goldTile;
                     }
 
                     strMap += chrMap[i, j];

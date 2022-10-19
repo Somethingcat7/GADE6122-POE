@@ -15,7 +15,7 @@ namespace GADE6122_POE.Classes.Items
         public int MaxGoldAmount { get { return GoldAmount; } set { GoldAmount = value; } }
         
         //Constructor for gold
-        public Gold(int X, int Y) : base (X,Y,'G')
+        public Gold(int X, int Y) : base (X,Y,'$')
         {
             GoldAmount = Randomamount.Next(1,6);
         }
