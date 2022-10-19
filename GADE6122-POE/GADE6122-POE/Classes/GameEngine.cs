@@ -20,7 +20,7 @@ namespace GADE6122_POE.Classes
 
         public GameEngine()
         {
-            map = new Map(10, 25, 10, 25, 3);
+            map = new Map(10, 25, 10, 25, 3, 5);
         }
 
         private static readonly char playerTile = 'H';

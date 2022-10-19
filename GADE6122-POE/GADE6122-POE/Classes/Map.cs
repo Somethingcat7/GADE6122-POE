@@ -14,6 +14,9 @@ namespace GADE6122_POE.Classes
     {   //Map tile array
         public Tile[,] tilesMap;
 
+        //Item tile array
+        public Tile[] arrItems;
+
         //Player object
         private Hero heroPlayer;
 
@@ -50,6 +53,7 @@ namespace GADE6122_POE.Classes
 
             TilesMap = new Tile[mapWidth, mapHeight];
             arrEnemies = new Enemy[numEnemies];
+            arrItems = new Item[GoldAmount];
 
             //Filling the map array
             MapFill();
@@ -63,6 +67,13 @@ namespace GADE6122_POE.Classes
             {
                 arrEnemies[i] = (Enemy)Create(Tile.TileType.Enemy);
                 AddToMap(ArrEnemies[i]);
+            }
+
+            for (int i = 0; i < GoldAmount; i++)
+            {
+                arrItems[i] = (Gold)Create(Tile.TileType.Gold);
+                arrItems[i].PickUp = false;
+                AddToMap(arrItems[i]);
             }
 
             UpdateVision();

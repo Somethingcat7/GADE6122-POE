@@ -31,6 +31,7 @@ namespace GADE6122_POE.Tiles
         //Public accessors
         public int x { get { return X; } set { X = value; } }
         public int y { get { return Y; } set { Y = value; } }
+        public bool PickUp { get; internal set; }
 
     }
 }
