@@ -58,6 +58,12 @@ namespace GADE6122_POE.Classes
                         chrMap[i, j] = smpMonTile;
                     }
 
+                    //Enemy tile placed
+                    if (map.TilesMap[i, j].GetType() == typeof(Mage))
+                    {
+                        chrMap[i, j] = smpMonTile;
+                    }
+
                     strMap += chrMap[i, j];
                 }
 

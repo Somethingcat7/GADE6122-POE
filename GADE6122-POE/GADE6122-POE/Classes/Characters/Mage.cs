@@ -14,6 +14,39 @@ namespace GADE6122_POE.Classes.Characters
 
         }
 
+        public override MovementEnum ReturnMove(MovementEnum move = MovementEnum.NoMovement)
+        {
+            return MovementEnum.NoMovement;
+        }
 
+        public override bool CheckRange(Character target)
+        {
+            bool Attackable;
+
+            bool CheckAccross(Character character)
+            {
+                bool InRange = true;
+                //Checks to see if the mage can attack in a x pattern
+                if (Math.Abs(this.X - character.x) == 2 || Math.Abs(this.Y - character.x) == 2)
+                {
+                    InRange = false;
+                }
+                
+                return InRange;
+            }
+
+            //Checks to see if mage can attack around itself
+            if (DistanceTo(target) == 1 || CheckAccross(target))
+            {
+                Attackable = true;
+            }
+            else
+            {
+                Attackable = false;
+            }
+
+            return Attackable;
+            
+        }
     }
 }
