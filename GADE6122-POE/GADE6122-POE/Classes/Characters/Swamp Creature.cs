@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GADE6122_POE.Characters;
 using GADE6122_POE.Tiles;
+using GADE6122_POE.Classes.Items;
 
 namespace GADE6122_POE.Characters
 {
@@ -24,7 +25,7 @@ namespace GADE6122_POE.Characters
             switch (move)
             {
                 case MovementEnum.Up:
-                    if (visionArray[0].GetType() == typeof(EmptyTile))
+                    if (visionArray[0].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
                     {
                         if (visionArray[0].GetType() != typeof(Hero))
                         {
@@ -33,31 +34,35 @@ namespace GADE6122_POE.Characters
                     }
                     break;
                 case MovementEnum.Down:
-                    if (visionArray[1].GetType() == typeof(EmptyTile))
+                    if (visionArray[1].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
                     {
                         if (visionArray[1].GetType() != typeof(Hero))
                         {
-                            moveDirection = MovementEnum.Up;
+                            moveDirection = MovementEnum.Down;
                         }
                     }
                     break;
                 case MovementEnum.Left:
-                    if (visionArray[2].GetType() == typeof(EmptyTile))
+                    if (visionArray[2].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
                     {
                         if (visionArray[2].GetType() != typeof(Hero))
                         {
-                            moveDirection = MovementEnum.Up;
+                            moveDirection = MovementEnum.Left;
                         }
                     }
                     break;
                 case MovementEnum.Right:
-                    if (visionArray[3].GetType() == typeof(EmptyTile))
+                    if (visionArray[3].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
                     {
                         if (visionArray[3].GetType() != typeof(Hero))
                         {
-                            moveDirection = MovementEnum.Up;
+                            moveDirection = MovementEnum.Right;
                         }
                     }
+                    break;
+
+                default:
+                    moveDirection = MovementEnum.NoMovement;
                     break;
             }
 

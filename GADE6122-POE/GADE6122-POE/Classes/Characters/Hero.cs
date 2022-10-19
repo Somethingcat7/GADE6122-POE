@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GADE6122_POE.Tiles;
+using GADE6122_POE.Classes.Items;
 
 namespace GADE6122_POE.Characters
 {
@@ -23,25 +24,25 @@ namespace GADE6122_POE.Characters
             switch (move)
             {
                 case MovementEnum.Up:
-                    if (VisionArray[0].GetType() == typeof(EmptyTile))
+                    if (VisionArray[0].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
                     {
                         moveDirection = MovementEnum.Up;
                     }
                     break;
                 case MovementEnum.Down:
-                    if (VisionArray[1].GetType() == typeof(EmptyTile))
+                    if (VisionArray[1].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
                     {
                         moveDirection = MovementEnum.Down;
                     }
                     break;
                 case MovementEnum.Left:
-                    if (VisionArray[2].GetType() == typeof(EmptyTile))
+                    if (VisionArray[2].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
                     {
                         moveDirection = MovementEnum.Left;
                     }
                     break;
                 case MovementEnum.Right:
-                    if (VisionArray[3].GetType() == typeof(EmptyTile))
+                    if (VisionArray[3].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
                     {
                         moveDirection = MovementEnum.Right;
                     }

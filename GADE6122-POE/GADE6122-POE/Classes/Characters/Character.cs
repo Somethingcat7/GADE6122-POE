@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GADE6122_POE.Tiles;
+using GADE6122_POE.Classes.Items;
 
 namespace GADE6122_POE.Characters
 {
@@ -13,6 +14,7 @@ namespace GADE6122_POE.Characters
         protected int hp;
         protected int maxHp;
         protected int damage;
+        protected int GoldOnHand;
         
         //Vision array
         protected Tile[] visionArray = new Tile[4];
@@ -111,5 +113,17 @@ namespace GADE6122_POE.Characters
 
         //ToString method
         public abstract override string ToString();
+
+        //Pick up method
+        public void PickUp(Item i)
+        {
+            if (i.GetType() == typeof(Gold))
+            {
+                Random random = new Random();
+                GoldOnHand += random.Next(1, 5);
+                i.PickUp = true;
+                
+            }
+        }
     }
 }
