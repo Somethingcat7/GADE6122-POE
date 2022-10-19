@@ -223,6 +223,11 @@ namespace GADE6122_POE.Classes
                 AddToMap(arrEnemies[i]);
             }
 
+            for (int i = 0; i < arrItems.Length; i++)
+            {
+                AddToMap(arrItems[i]);
+            }
+
             foreach (var enemy in arrEnemies)
             {
                 if (enemy.CheckRange(HeroPlayer))
@@ -240,7 +245,7 @@ namespace GADE6122_POE.Classes
 
             for (int i = 0; i < arrEnemies.Length; i++)
             {
-                enmDirection = random.Next(0,5);
+                enmDirection = random.Next(1,5);
                 arrEnemies[i].Move(arrEnemies[i].ReturnMove((Character.MovementEnum)enmDirection));
             }
         }
