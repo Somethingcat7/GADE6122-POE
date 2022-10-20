@@ -121,9 +121,10 @@ namespace GADE6122_POE.Characters
             {
                 Random random = new Random();
                 GoldOnHand += random.Next(1, 5);
-                i.PickUp = true;
-                
+                i.PickUp = true; 
             }
         }
+
+        
     }
 }

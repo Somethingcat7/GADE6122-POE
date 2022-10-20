@@ -234,9 +234,13 @@ namespace GADE6122_POE.Classes
                 {
                     enemy.Attack(heroPlayer);
                 }
+                
+                GetItemAtPosition(enemy);
             }
 
             UpdateVision();
+            GetItemAtPosition(HeroPlayer);
+            
         }
         public void EnemyMovement()
         {
@@ -247,6 +251,25 @@ namespace GADE6122_POE.Classes
             {
                 enmDirection = random.Next(1,5);
                 arrEnemies[i].Move(arrEnemies[i].ReturnMove((Character.MovementEnum)enmDirection));
+            }
+        }
+
+        public void GetItemAtPosition(Character character)
+        {
+            for (int i = 0; i < arrItems.Length; i++)
+            {
+                if (character.x == arrItems[i].x && character.y == arrItems[i].y)
+                {
+                    if (arrItems[i].GetType() == typeof(Gold))
+                    {
+                        character.PickUp((Gold)arrItems[i]);
+
+                        if (arrItems[i].PickUp)
+                        {
+                            arrItems = arrItems.Where((source, index) => index != i).ToArray();
+                        }
+                    }
+                }
             }
         }
     }
