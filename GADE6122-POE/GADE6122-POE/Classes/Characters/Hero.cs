@@ -30,19 +30,19 @@ namespace GADE6122_POE.Characters
                     }
                     break;
                 case MovementEnum.Down:
-                    if (VisionArray[1].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
+                    if (VisionArray[1].GetType() == typeof(EmptyTile) || visionArray[1].GetType() == typeof(Gold))
                     {
                         moveDirection = MovementEnum.Down;
                     }
                     break;
                 case MovementEnum.Left:
-                    if (VisionArray[2].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
+                    if (VisionArray[2].GetType() == typeof(EmptyTile) || visionArray[2].GetType() == typeof(Gold))
                     {
                         moveDirection = MovementEnum.Left;
                     }
                     break;
                 case MovementEnum.Right:
-                    if (VisionArray[3].GetType() == typeof(EmptyTile) || visionArray[0].GetType() == typeof(Gold))
+                    if (VisionArray[3].GetType() == typeof(EmptyTile) || visionArray[3].GetType() == typeof(Gold))
                     {
                         moveDirection = MovementEnum.Right;
                     }

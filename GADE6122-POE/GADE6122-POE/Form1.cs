@@ -1,6 +1,7 @@
 using GADE6122_POE.Classes;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
+using System.Windows.Forms;
 
 namespace GADE6122_POE
 {
