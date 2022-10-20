@@ -1,9 +1,16 @@
 using GADE6122_POE.Classes;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace GADE6122_POE
 {
     public partial class frmGame : Form
     {
+
+        Stream Stream;
+        IFormatter Formatter;
+        GameEngine GameEngine = new GameEngine();
+
         public frmGame()
         {
             InitializeComponent();
@@ -71,6 +78,32 @@ namespace GADE6122_POE
              }
             }
            
+        }
+
+        private void SaveGame()
+        {
+            Stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "SaveFile.dat", FileMode.Create, FileAccess.Write);
+            Formatter.Serialize(Stream, GameEngine);
+            Stream.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveGame();
+        }
+
+        private void LoadGame()
+        {
+            Stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "SaveFile.dat", FileMode.Open, FileAccess.Read);
+            GameEngine = (GameEngine)Formatter.Deserialize(Stream);
+            GameEngine.Map.MapUpdate();
+            MapCreate();
+            Stream.Close();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadGame();
         }
     }
 }

@@ -35,6 +35,8 @@
             this.btnAttack = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMap
@@ -51,11 +53,11 @@
             // 
             this.lblPlayerStats.AutoSize = true;
             this.lblPlayerStats.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPlayerStats.Location = new System.Drawing.Point(690, 9);
+            this.lblPlayerStats.Location = new System.Drawing.Point(627, 9);
             this.lblPlayerStats.Name = "lblPlayerStats";
-            this.lblPlayerStats.Size = new System.Drawing.Size(98, 16);
+            this.lblPlayerStats.Size = new System.Drawing.Size(161, 16);
             this.lblPlayerStats.TabIndex = 1;
-            this.lblPlayerStats.Text = "Map Goes Here";
+            this.lblPlayerStats.Text = "Player stats Goes Here";
             // 
             // btnDown
             // 
@@ -112,11 +114,33 @@
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(174, 415);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 7;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(12, 415);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnUp);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnAttack);
@@ -141,5 +165,7 @@
         private Button btnAttack;
         private Button btnRight;
         private Button btnUp;
+        private Button btnLoad;
+        private Button btnSave;
     }
 }
