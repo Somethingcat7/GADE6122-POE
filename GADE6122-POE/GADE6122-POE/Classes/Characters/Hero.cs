@@ -58,7 +58,7 @@ namespace GADE6122_POE.Characters
         //ToString method for hero
         public override string ToString()
         {
-            return $"Player Stats: \nHp: {this.HP}/{this.MaxHp} \nDamage: {this.damage} \n[{this.X},{this.Y}]";
+            return $"Player Stats: \nHp: {this.HP}/{this.MaxHp} \nDamage: {this.damage} \n[{this.X},{this.Y}] \n Gold: {this.GoldOnHand}";
         }
     }
 }
