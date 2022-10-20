@@ -43,7 +43,10 @@ namespace GADE6122_POE
             engine.Map.EnemyMovement();
             engine.Map.MapUpdate();
             MapCreate();
-            
+
+            cmbEnemies.DataSource = engine.Map.arrEnemies;
+            cmbItems.DataSource = engine.Map.arrItems;
+
         }
 
         private void btnDown_Click(object sender, EventArgs e)
@@ -52,6 +55,9 @@ namespace GADE6122_POE
             engine.Map.EnemyMovement();
             engine.Map.MapUpdate();
             MapCreate();
+
+            cmbEnemies.DataSource = engine.Map.arrEnemies;
+            cmbItems.DataSource = engine.Map.arrItems;
 
         }
 
@@ -62,6 +68,8 @@ namespace GADE6122_POE
             engine.Map.MapUpdate();
             MapCreate();
 
+            cmbEnemies.DataSource = engine.Map.arrEnemies;
+            cmbItems.DataSource = engine.Map.arrItems;
         }
 
         private void btnLeft_Click(object sender, EventArgs e)
@@ -70,6 +78,9 @@ namespace GADE6122_POE
             engine.Map.EnemyMovement();
             engine.Map.MapUpdate();
             MapCreate();
+
+            cmbEnemies.DataSource = engine.Map.arrEnemies;
+            cmbItems.DataSource = engine.Map.arrItems;
 
         }
         //Attacks enemies if they are in range
@@ -83,7 +94,12 @@ namespace GADE6122_POE
                     GameEngine.Map.EnemyMovement();
              }
             }
-           
+
+            engine.Map.MapUpdate();
+
+            cmbEnemies.DataSource = engine.Map.arrEnemies;
+            cmbItems.DataSource = engine.Map.arrItems;
+
         }
 
         private void SaveGame()

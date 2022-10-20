@@ -240,7 +240,9 @@ namespace GADE6122_POE.Classes
 
             UpdateVision();
             GetItemAtPosition(HeroPlayer);
+
             
+
         }
         public void EnemyMovement()
         {
