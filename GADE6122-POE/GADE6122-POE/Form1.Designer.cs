@@ -57,11 +57,12 @@
             // 
             this.lblPlayerStats.AutoSize = true;
             this.lblPlayerStats.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPlayerStats.Location = new System.Drawing.Point(627, 9);
+            this.lblPlayerStats.Location = new System.Drawing.Point(255, 9);
             this.lblPlayerStats.Name = "lblPlayerStats";
             this.lblPlayerStats.Size = new System.Drawing.Size(161, 16);
             this.lblPlayerStats.TabIndex = 1;
             this.lblPlayerStats.Text = "Player stats Goes Here";
+            this.lblPlayerStats.Click += new System.EventHandler(this.lblPlayerStats_Click);
             // 
             // btnDown
             // 
@@ -141,44 +142,48 @@
             // cmbEnemies
             // 
             this.cmbEnemies.FormattingEnabled = true;
-            this.cmbEnemies.Location = new System.Drawing.Point(627, 357);
+            this.cmbEnemies.Location = new System.Drawing.Point(255, 357);
             this.cmbEnemies.Name = "cmbEnemies";
             this.cmbEnemies.Size = new System.Drawing.Size(161, 23);
             this.cmbEnemies.TabIndex = 9;
+            this.cmbEnemies.SelectedIndexChanged += new System.EventHandler(this.cmbEnemies_SelectedIndexChanged);
             // 
             // cmbItems
             // 
             this.cmbItems.FormattingEnabled = true;
-            this.cmbItems.Location = new System.Drawing.Point(627, 415);
+            this.cmbItems.Location = new System.Drawing.Point(255, 415);
             this.cmbItems.Name = "cmbItems";
             this.cmbItems.Size = new System.Drawing.Size(161, 23);
             this.cmbItems.TabIndex = 10;
+            this.cmbItems.SelectedIndexChanged += new System.EventHandler(this.cmbItems_SelectedIndexChanged);
             // 
             // lblEnemiesList
             // 
             this.lblEnemiesList.AutoSize = true;
             this.lblEnemiesList.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEnemiesList.Location = new System.Drawing.Point(627, 338);
+            this.lblEnemiesList.Location = new System.Drawing.Point(255, 338);
             this.lblEnemiesList.Name = "lblEnemiesList";
             this.lblEnemiesList.Size = new System.Drawing.Size(56, 16);
             this.lblEnemiesList.TabIndex = 11;
             this.lblEnemiesList.Text = "Enemies";
+            this.lblEnemiesList.Click += new System.EventHandler(this.lblEnemiesList_Click);
             // 
             // lblItemsList
             // 
             this.lblItemsList.AutoSize = true;
             this.lblItemsList.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblItemsList.Location = new System.Drawing.Point(627, 389);
+            this.lblItemsList.Location = new System.Drawing.Point(255, 389);
             this.lblItemsList.Name = "lblItemsList";
             this.lblItemsList.Size = new System.Drawing.Size(42, 16);
             this.lblItemsList.TabIndex = 12;
             this.lblItemsList.Text = "Items";
+            this.lblItemsList.Click += new System.EventHandler(this.lblItemsList_Click);
             // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(421, 450);
             this.Controls.Add(this.lblItemsList);
             this.Controls.Add(this.lblEnemiesList);
             this.Controls.Add(this.cmbItems);

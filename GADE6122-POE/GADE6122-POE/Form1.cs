@@ -34,6 +34,7 @@ namespace GADE6122_POE
 
             //Adds enemies and items to comboboxes
             cmbEnemies.DataSource = GameEngine.Map.arrEnemies;
+            cmbItems.DataSource = GameEngine.Map.arrItems;
         }
 
         private void btnUp_Click(object sender, EventArgs e)
@@ -71,14 +72,15 @@ namespace GADE6122_POE
             MapCreate();
 
         }
-
+        //Attacks enemies if they are in range
         private void btnAttack_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < engine.Map.arrEnemies.Length; i++)
             {
-             if (engine.Map.HeroPlayer.CheckRange(engine.Map.arrEnemies[i]))
+             if (engine.Map.HeroPlayer.CheckRange(engine.Map.arrEnemies[cmbEnemies.SelectedIndex]))
              {
-                    engine.Map.HeroPlayer.Attack(engine.Map.arrEnemies[i]);
+                    engine.Map.HeroPlayer.Attack(engine.Map.arrEnemies[cmbEnemies.SelectedIndex]);
+                    GameEngine.Map.EnemyMovement();
              }
             }
            
@@ -108,6 +110,31 @@ namespace GADE6122_POE
         private void btnLoad_Click(object sender, EventArgs e)
         {
             LoadGame();
+        }
+
+        private void lblEnemiesList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPlayerStats_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbEnemies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblItemsList_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
