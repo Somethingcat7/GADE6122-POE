@@ -31,6 +31,9 @@ namespace GADE6122_POE
 
             //Show player stats
             lblPlayerStats.Text = engine.Map.HeroPlayer.ToString();
+
+            //Adds enemies and items to comboboxes
+            cmbEnemies.DataSource = GameEngine.Map.arrEnemies;
         }
 
         private void btnUp_Click(object sender, EventArgs e)
