@@ -1,5 +1,6 @@
 namespace GADE6122_POE
 {
+    [Serializable]
     internal static class Program
     {
         /// <summary>

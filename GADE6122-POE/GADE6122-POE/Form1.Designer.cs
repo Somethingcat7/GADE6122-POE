@@ -1,5 +1,6 @@
 ﻿namespace GADE6122_POE
 {
+    //[Serializable]
     partial class frmGame
     {
         /// <summary>

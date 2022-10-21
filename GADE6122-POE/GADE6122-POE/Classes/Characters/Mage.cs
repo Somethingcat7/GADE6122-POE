@@ -37,14 +37,27 @@ namespace GADE6122_POE.Classes.Characters
             }
 
             //Checks to see if mage can attack around itself
-            if (DistanceTo(target) == 1 || CheckAccross(target))
+            if (DistanceTo(target) == 1)
             {
                 Attackable = true;
+            }
+            else if (DistanceTo(target) == 2)
+            {
+                if (CheckAccross(target))
+                {
+                    Attackable = true;
+                }
+                else
+                {
+                    Attackable = false;
+                }
+                
             }
             else
             {
                 Attackable = false;
             }
+
 
             return Attackable;
             

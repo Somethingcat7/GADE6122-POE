@@ -9,7 +9,7 @@ namespace GADE6122_POE
     [Serializable]
     public partial class frmGame : Form
     {       
-        GameEngine GameEngine = new GameEngine();
+        GameEngine gameEngine = new GameEngine();
 
         public frmGame()
         {
@@ -32,8 +32,8 @@ namespace GADE6122_POE
             lblPlayerStats.Text = engine.Map.HeroPlayer.ToString();
 
             //Adds enemies and items to comboboxes
-            cmbEnemies.DataSource = GameEngine.Map.arrEnemies;
-            cmbItems.DataSource = GameEngine.Map.arrItems;
+            cmbEnemies.DataSource = gameEngine.Map.arrEnemies;
+            cmbItems.DataSource = gameEngine.Map.arrItems;
         }
 
         private void btnUp_Click(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace GADE6122_POE
              if (engine.Map.HeroPlayer.CheckRange(engine.Map.arrEnemies[cmbEnemies.SelectedIndex]))
              {
                     engine.Map.HeroPlayer.Attack(engine.Map.arrEnemies[cmbEnemies.SelectedIndex]);
-                    GameEngine.Map.EnemyMovement();
+                    gameEngine.Map.EnemyMovement();
              }
             }
 
@@ -106,7 +106,7 @@ namespace GADE6122_POE
             BinaryFormatter Formatter = new BinaryFormatter();
             FileStream fileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\SaveFile.dat", FileMode.Create, FileAccess.Write);
             StreamWriter streamWriter = new StreamWriter(fileStream);
-            Formatter.Serialize(fileStream, GameEngine);
+            Formatter.Serialize(fileStream, gameEngine);
             fileStream.Close();
         }
 
@@ -119,8 +119,8 @@ namespace GADE6122_POE
         {
             BinaryFormatter Formatter = new BinaryFormatter();
             FileStream fileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\SaveFile.dat", FileMode.Open, FileAccess.Read);
-            GameEngine = (GameEngine)Formatter.Deserialize(fileStream);
-            GameEngine.Map.MapUpdate();
+            gameEngine = (GameEngine)Formatter.Deserialize(fileStream);
+            gameEngine.Map.MapUpdate();
             MapCreate();
             fileStream.Close();
         }
