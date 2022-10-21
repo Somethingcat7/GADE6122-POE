@@ -2,6 +2,7 @@ using GADE6122_POE.Classes;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GADE6122_POE
 {
@@ -9,7 +10,7 @@ namespace GADE6122_POE
     {
 
         Stream Stream;
-        IFormatter Formatter;
+        BinaryFormatter Formatter = new BinaryFormatter();
         GameEngine GameEngine = new GameEngine();
 
         public frmGame()
@@ -101,7 +102,7 @@ namespace GADE6122_POE
             cmbItems.DataSource = engine.Map.arrItems;
 
         }
-
+        //Saves game
         private void SaveGame()
         {
             Stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "SaveFile.dat", FileMode.Create, FileAccess.Write);
@@ -113,7 +114,7 @@ namespace GADE6122_POE
         {
             SaveGame();
         }
-
+        //Loads game
         private void LoadGame()
         {
             Stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "SaveFile.dat", FileMode.Open, FileAccess.Read);

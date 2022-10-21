@@ -217,17 +217,17 @@ namespace GADE6122_POE.Classes
                     arrEnemies = arrEnemies.Where((source, index) => index != i).ToArray();
                 }
             }
-
+            //Adding enemies to the array
             for (int i = 0; i < arrEnemies.Length; i++)
             {
                 AddToMap(arrEnemies[i]);
             }
-
+            //Adding items to the array
             for (int i = 0; i < arrItems.Length; i++)
             {
                 AddToMap(arrItems[i]);
             }
-
+            //Enemies attacking hero
             foreach (var enemy in arrEnemies)
             {
                 if (enemy.CheckRange(HeroPlayer))
