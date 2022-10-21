@@ -42,6 +42,7 @@
             this.cmbItems = new System.Windows.Forms.ComboBox();
             this.lblEnemiesList = new System.Windows.Forms.Label();
             this.lblItemsList = new System.Windows.Forms.Label();
+            this.lblDialoge = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblMap
@@ -180,11 +181,22 @@
             this.lblItemsList.Text = "Items";
             this.lblItemsList.Click += new System.EventHandler(this.lblItemsList_Click);
             // 
+            // lblDialoge
+            // 
+            this.lblDialoge.AutoSize = true;
+            this.lblDialoge.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDialoge.Location = new System.Drawing.Point(255, 206);
+            this.lblDialoge.Name = "lblDialoge";
+            this.lblDialoge.Size = new System.Drawing.Size(56, 16);
+            this.lblDialoge.TabIndex = 13;
+            this.lblDialoge.Text = "Dialoge";
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 450);
+            this.Controls.Add(this.lblDialoge);
             this.Controls.Add(this.lblItemsList);
             this.Controls.Add(this.lblEnemiesList);
             this.Controls.Add(this.cmbItems);
@@ -221,5 +233,6 @@
         private ComboBox cmbItems;
         private Label lblEnemiesList;
         private Label lblItemsList;
+        private Label lblDialoge;
     }
 }

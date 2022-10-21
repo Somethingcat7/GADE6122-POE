@@ -85,16 +85,23 @@ namespace GADE6122_POE
         //Attacks enemies if they are in range
         private void btnAttack_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < engine.Map.arrEnemies.Length; i++)
+            engine.Map.MapUpdate();
+            // for (int i = 0; i < engine.Map.arrEnemies.Length; i++)
+            //{
+            if (engine.Map.HeroPlayer.CheckRange(engine.Map.arrEnemies[cmbEnemies.SelectedIndex]))
             {
-             if (engine.Map.HeroPlayer.CheckRange(engine.Map.arrEnemies[cmbEnemies.SelectedIndex]))
-             {
                     engine.Map.HeroPlayer.Attack(engine.Map.arrEnemies[cmbEnemies.SelectedIndex]);
                     gameEngine.Map.EnemyMovement();
-             }
+                lblDialoge.Text = "Enemy was attacked";
             }
+            else
+            {
+                lblDialoge.Text = "Enemy not in range";
+            }
+            //}
 
             engine.Map.MapUpdate();
+            MapCreate();
 
             cmbEnemies.DataSource = engine.Map.arrEnemies;
             cmbItems.DataSource = engine.Map.arrItems;

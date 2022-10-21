@@ -53,7 +53,7 @@ namespace GADE6122_POE.Characters
         //Death method
         public bool isDead()
         {
-            if (this.hp == 0)
+            if (this.hp <= 0)
             {
                 return true;
             }
