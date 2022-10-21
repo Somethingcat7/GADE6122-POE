@@ -113,7 +113,7 @@ namespace GADE6122_POE
             BinaryFormatter Formatter = new BinaryFormatter();
             FileStream fileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\SaveFile.dat", FileMode.Create, FileAccess.Write);
             StreamWriter streamWriter = new StreamWriter(fileStream);
-            Formatter.Serialize(fileStream, gameEngine);
+            Formatter.Serialize(fileStream, gameEngine); //For some reason the save file is empty
             fileStream.Close();
         }
 
@@ -126,7 +126,7 @@ namespace GADE6122_POE
         {
             BinaryFormatter Formatter = new BinaryFormatter();
             FileStream fileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\SaveFile.dat", FileMode.Open, FileAccess.Read);
-            gameEngine = (GameEngine)Formatter.Deserialize(fileStream);
+            gameEngine = (GameEngine)Formatter.Deserialize(fileStream);//I think this would work if the savefile wasn't empty
             gameEngine.Map.MapUpdate();
             MapCreate();
             fileStream.Close();
