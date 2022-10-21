@@ -7,6 +7,7 @@ using GADE6122_POE.Tiles;
 
 namespace GADE6122_POE.Classes.Items
 {
+    [Serializable]
     abstract class Item : Tile
     {
 

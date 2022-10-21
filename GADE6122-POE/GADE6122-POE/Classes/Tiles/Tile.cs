@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE6122_POE.Tiles
 {
+    [Serializable]
     abstract class Tile
     {
         //Protected Variables

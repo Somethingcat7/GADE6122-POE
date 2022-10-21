@@ -9,6 +9,7 @@ using GADE6122_POE.Classes.Items;
 
 namespace GADE6122_POE.Characters
 {
+    [Serializable]
     class Swamp_Creature : Enemy
     {   
         //Constructor for Swamp Creature

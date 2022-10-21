@@ -7,7 +7,8 @@ using GADE6122_POE.Characters;
 
 namespace GADE6122_POE.Classes.Characters
 {
-   class Mage : Enemy
+    [Serializable]
+    class Mage : Enemy
     {   //Constructor of Mage
         public Mage(int X, int Y) : base(X, Y, 'M', 5, 5)
         {

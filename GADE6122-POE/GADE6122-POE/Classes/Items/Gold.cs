@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE6122_POE.Classes.Items
 {
+    [Serializable]
     class Gold : Item
     {
         private int GoldAmount;

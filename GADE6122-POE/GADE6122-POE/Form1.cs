@@ -6,11 +6,9 @@ using System.IO;
 
 namespace GADE6122_POE
 {
+    [Serializable]
     public partial class frmGame : Form
-    {
-
-        Stream Stream;
-        BinaryFormatter Formatter = new BinaryFormatter();
+    {       
         GameEngine GameEngine = new GameEngine();
 
         public frmGame()
@@ -105,9 +103,11 @@ namespace GADE6122_POE
         //Saves game
         private void SaveGame()
         {
-            Stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "SaveFile.dat", FileMode.Create, FileAccess.Write);
-            Formatter.Serialize(Stream, GameEngine);
-            Stream.Close();
+            BinaryFormatter Formatter = new BinaryFormatter();
+            FileStream fileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\SaveFile.dat", FileMode.Create, FileAccess.Write);
+            StreamWriter streamWriter = new StreamWriter(fileStream);
+            Formatter.Serialize(fileStream, GameEngine);
+            fileStream.Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -117,11 +117,12 @@ namespace GADE6122_POE
         //Loads game
         private void LoadGame()
         {
-            Stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "SaveFile.dat", FileMode.Open, FileAccess.Read);
-            GameEngine = (GameEngine)Formatter.Deserialize(Stream);
+            BinaryFormatter Formatter = new BinaryFormatter();
+            FileStream fileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\SaveFile.dat", FileMode.Open, FileAccess.Read);
+            GameEngine = (GameEngine)Formatter.Deserialize(fileStream);
             GameEngine.Map.MapUpdate();
             MapCreate();
-            Stream.Close();
+            fileStream.Close();
         }
 
         private void btnLoad_Click(object sender, EventArgs e)

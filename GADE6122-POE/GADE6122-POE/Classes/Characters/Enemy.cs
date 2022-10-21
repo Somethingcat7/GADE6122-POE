@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE6122_POE.Characters
 {
+    [Serializable]
     abstract class Enemy : Character
     {
         //Protected variable

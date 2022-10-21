@@ -8,6 +8,7 @@ using GADE6122_POE.Classes.Items;
 
 namespace GADE6122_POE.Characters
 {
+    [Serializable]
     abstract class Character : Tile
     {
         //protected variables

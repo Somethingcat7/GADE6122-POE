@@ -12,6 +12,7 @@ using GADE6122_POE.Classes.Items;
 
 namespace GADE6122_POE.Classes
 {
+    [Serializable]
     class GameEngine
     {
         private Map map;

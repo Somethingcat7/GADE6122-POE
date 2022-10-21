@@ -10,6 +10,7 @@ using GADE6122_POE.Classes.Items;
 
 namespace GADE6122_POE.Classes
 {
+    [Serializable]
     class Map
     {   //Map tile array
         public Tile[,] tilesMap;
