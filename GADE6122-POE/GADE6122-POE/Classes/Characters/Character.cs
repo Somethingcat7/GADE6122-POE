@@ -23,6 +23,14 @@ namespace GADE6122_POE.Characters
         //Vision array
         protected Tile[] visionArray = new Tile[4];
         
+        //Public Accessors
+        public int HP { get { return hp; } set { hp = value; } }
+        public int MaxHp { get { return maxHp; } set { maxHp = value; } }
+        public int Damage { get { return damage; } set { damage = value; } }
+        public Tile[] VisionArray { get{ return visionArray; } set{ visionArray = value; } }
+        public Weapon Weapon { get { return weapon; } }
+        public int GoldOnHand { get { return goldOnHand; } set{ goldOnHand = value; } }
+        
         //Movement
         public enum MovementEnum
         {
@@ -32,14 +40,6 @@ namespace GADE6122_POE.Characters
             Left,  
             Right,
         }
-
-        //Public Accessors
-        public int HP { get { return hp; } set { hp = value; } }
-        public int MaxHp { get { return maxHp; } set { maxHp = value; } }
-        public int Damage { get { return damage; } set { damage = value; } }
-        public Tile[] VisionArray { get{ return visionArray; } set{ visionArray = value; } }
-        public Weapon Weapon { get { return weapon; } }
-        public int GoldOnHand { get { return goldOnHand; } set{ goldOnHand = value; } }
         
         //Constructor
         public Character(int X, int Y, char Symbol, int Damage, int MaxHP) : base (X,Y)
@@ -47,6 +47,32 @@ namespace GADE6122_POE.Characters
             this.hp = MaxHP;
             this.maxHp = MaxHP;
             this.damage = Damage;
+        }
+
+        //Pick up method
+        public void PickUp(Gold i)
+        {
+            if (i.GetType() == typeof(Gold))
+            {
+                Random random = new Random();
+                GoldOnHand += random.Next(1, 5);
+                i.PickUp = true;
+            }
+        }
+
+        public void PickUp(Weapon i)
+        {
+            if (i.GetType() == typeof(Weapon))
+            {
+                Random random = new Random();
+                i.PickUp = true;
+            }
+        }
+      
+        //Equip method
+        public void Equip(Weapon weapon)
+        {
+            this.weapon = weapon;
         }
 
         //Attack method
@@ -261,21 +287,9 @@ namespace GADE6122_POE.Characters
         //ToString method
         public abstract override string ToString();
 
-        //Pick up method
-        public void PickUp(Item i)
-        {
-            if (i.GetType() == typeof(Gold))
-            {
-                Random random = new Random();
-                GoldOnHand += random.Next(1, 5);
-                i.PickUp = true; 
-            }
-        }
+        
 
-        public void Equip(Weapon weapon)
-        {
-            this.weapon = weapon;
-        }
+        
 
     }
 }

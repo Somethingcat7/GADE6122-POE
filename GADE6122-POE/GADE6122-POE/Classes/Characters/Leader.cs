@@ -3,6 +3,7 @@ using GADE6122_POE.Classes.Items;
 using GADE6122_POE.Tiles;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,81 +25,86 @@ namespace GADE6122_POE.Classes.Characters
 
         public override MovementEnum ReturnMove(MovementEnum move = MovementEnum.NoMovement)
         {
-            MovementEnum movementEnum = MovementEnum.NoMovement;
+            // variable for a move direction
+            MovementEnum moveDirection = MovementEnum.NoMovement;
 
-            int xMove = this.x - target.x;
-            int yMove = this.y - target.y;
+            int xDist = this.X - target.x;
+            int yDist = this.Y - target.y;
 
-            Random random = new Random();
-
-            int direction = random.Next(0, 2);
+            Random rnd = new Random();
+            // 0 is horizontal
+            // 1 is veritcal
+            int direction = rnd.Next(0, 2);
 
             switch (direction)
             {
-                case 0: this.x = xMove;
-                    if (yMove < -1)
+                //{ 0 = north, 1 = south, 2 = west, 3 = east } in VisionArray
+
+                case 0:
+
+                    if (yDist < -1) // neg
                     {
                         if (VisionArray[3].GetType() == typeof(EmptyTile) || VisionArray[3].GetType() == typeof(Gold) || VisionArray[3].GetType() == typeof(MeleeWeapon) || VisionArray[3].GetType() == typeof(RangedWeapon))
                         {
-                            movementEnum = MovementEnum.Right;
+                            moveDirection = MovementEnum.Right;
                         }
                     }
-                    
-                    else if (yMove > 1)
+                    else if (yDist > 1) //pos
                     {
                         if (VisionArray[2].GetType() == typeof(EmptyTile) || VisionArray[2].GetType() == typeof(Gold) || VisionArray[2].GetType() == typeof(MeleeWeapon) || VisionArray[2].GetType() == typeof(RangedWeapon))
                         {
-                            movementEnum = MovementEnum.Left;
+                            moveDirection = MovementEnum.Left;
                         }
                     }
 
-                    else if (yMove == 1 || yMove == -1)
+                    else if (yDist == 1 || yDist == -1) //next to hero
                     {
-                        movementEnum = MovementEnum.NoMovement;
+                        moveDirection = MovementEnum.NoMovement;
                         goto case 1;
                     }
 
-                    else if (yMove == 0)
+                    else if (yDist == 0) // same collumn
                     {
                         goto case 1;
                     }
-                   
+
                     break;
 
                 case 1:
 
-                    if (xMove < -1)
+                    if (xDist > -1)
                     {
                         if (VisionArray[0].GetType() == typeof(EmptyTile) || VisionArray[0].GetType() == typeof(Gold) || VisionArray[0].GetType() == typeof(MeleeWeapon) || VisionArray[0].GetType() == typeof(RangedWeapon))
                         {
-                            movementEnum = MovementEnum.Up;
+                            moveDirection = MovementEnum.Up;
                         }
                     }
-
-                    else if (xMove > 1)
+                    else if (xDist < 1)
                     {
-                        if (VisionArray[1].GetType() == typeof(EmptyTile) || VisionArray[1].GetType() == typeof(Gold) || VisionArray[1].GetType() == typeof(MeleeWeapon) || VisionArray[1].GetType() == typeof(RangedWeapon))
+                        if (VisionArray[1].GetType() == typeof(EmptyTile) || VisionArray[1].GetType() == typeof(Item) || VisionArray[1].GetType() == typeof(MeleeWeapon) || VisionArray[1].GetType() == typeof(RangedWeapon))
                         {
-                            movementEnum = MovementEnum.Down;
+                            moveDirection = MovementEnum.Down;
                         }
                     }
 
-                    else if (xMove == 1 || xMove == -1)
+                    else if (xDist == 1 || xDist == -1)
                     {
-                        movementEnum = MovementEnum.NoMovement;
-                        goto case 1;
+                        moveDirection = MovementEnum.NoMovement;
+                        goto case 0;
                     }
 
-                    else if (xMove == 0)
+                    else if (xDist == 0)
                     {
-                        goto case 1;
+                        goto case 0;
                     }
-                    
+
                     break;
-                
+
             }
 
-            return movementEnum;
+            return moveDirection;
+
+
         }
     }
 }

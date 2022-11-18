@@ -21,7 +21,30 @@ namespace GADE6122_POE.Characters
         //ToString Method for enemies
         public override string ToString()
         {
-            return $"{this.GetType().Name}\n at [{this.X}, {this.Y}] with {this.damage} DMG";
+            string state;
+            bool equiped;
+
+            if (this.weapon == null)
+            {
+                state = "Barehanded";
+                equiped = false;
+            }
+            else
+            {
+                state = "Equiped";
+                equiped = true;
+            }
+
+            if (equiped)
+            {
+                return $"Equiped {this.GetType().Name}\n at [{this.X}, {this.Y}] with {this.weapon.ToString()} \n{this.weapon.Durability} x {this.weapon.Damage} DMG";
+            }
+            else
+            {
+                return $"Barehanded {this.GetType().Name}\n at [{this.X}, {this.Y}] with {this.damage} DMG";
+            }
+
+            
         }
     }
 }

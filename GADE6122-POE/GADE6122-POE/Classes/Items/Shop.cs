@@ -1,4 +1,5 @@
 ﻿using GADE6122_POE.Characters;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +26,9 @@ namespace GADE6122_POE.Classes.Items
 
         public Weapon[] ArrayOfWeapons { get { return arrayofWeapons; } set { arrayofWeapons = value; } }
 
-        public Shop(Character player) 
+        public Shop(Character hero) 
         {
-           character = player;
+           character = hero;
 
             for (int i = 0; i < arrayofWeapons.Length; i++)
             {
@@ -82,13 +83,13 @@ namespace GADE6122_POE.Classes.Items
                     break;
 
                 case WeaponTypesInShops.RANGED:
-                    switch (random.Next(0, Enum.GetNames(typeof(RangedTypes)).Length))
+                    switch (random.Next(0, Enum.GetNames(typeof(RangedWeapon.RangedTypes)).Length))
                     {
-                        case (int)RangedTypes.RIFLE:
-                            item = new RangedWeapon(RangedTypes.RIFLE);
+                        case (int)RangedWeapon.RangedTypes.RIFLE:
+                            item = new RangedWeapon(RangedWeapon.RangedTypes.RIFLE);
                             break;
-                        case (int)RangedTypes.LONGBOW:
-                            item = new RangedWeapon(RangedTypes.LONGBOW);
+                        case (int)RangedWeapon.RangedTypes.LONGBOW:
+                            item = new RangedWeapon(RangedWeapon.RangedTypes.LONGBOW);
                             break;
                         default:
                             item = null;
@@ -105,10 +106,11 @@ namespace GADE6122_POE.Classes.Items
 
         public bool Buyable(int Amount)
         {
-            if (character.GoldOnHand >= Amount)
+            if (character.GoldOnHand >= amount)
             {
                 return true;
             }
+
             else
             {
                 return false;
@@ -116,7 +118,9 @@ namespace GADE6122_POE.Classes.Items
         }
 
         public void Buy(int Amount)
-        {
+        {   
+            character.GoldOnHand -= Amount;
+            
             for (int i = 0; i < arrayofWeapons.Length; i++)
             {
                 if (Amount == arrayofWeapons[i].Cost)

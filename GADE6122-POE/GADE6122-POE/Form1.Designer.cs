@@ -43,6 +43,9 @@
             this.lblEnemiesList = new System.Windows.Forms.Label();
             this.lblItemsList = new System.Windows.Forms.Label();
             this.lblDialoge = new System.Windows.Forms.Label();
+            this.btnShop1 = new System.Windows.Forms.Button();
+            this.btnShop2 = new System.Windows.Forms.Button();
+            this.btnShop3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMap
@@ -59,7 +62,7 @@
             // 
             this.lblPlayerStats.AutoSize = true;
             this.lblPlayerStats.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPlayerStats.Location = new System.Drawing.Point(255, 9);
+            this.lblPlayerStats.Location = new System.Drawing.Point(424, 9);
             this.lblPlayerStats.Name = "lblPlayerStats";
             this.lblPlayerStats.Size = new System.Drawing.Size(161, 16);
             this.lblPlayerStats.TabIndex = 1;
@@ -69,7 +72,7 @@
             // btnDown
             // 
             this.btnDown.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDown.Location = new System.Drawing.Point(93, 415);
+            this.btnDown.Location = new System.Drawing.Point(93, 485);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(75, 23);
             this.btnDown.TabIndex = 2;
@@ -80,7 +83,7 @@
             // btnLeft
             // 
             this.btnLeft.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLeft.Location = new System.Drawing.Point(12, 386);
+            this.btnLeft.Location = new System.Drawing.Point(12, 456);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(75, 23);
             this.btnLeft.TabIndex = 3;
@@ -91,7 +94,7 @@
             // btnAttack
             // 
             this.btnAttack.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAttack.Location = new System.Drawing.Point(93, 386);
+            this.btnAttack.Location = new System.Drawing.Point(93, 456);
             this.btnAttack.Name = "btnAttack";
             this.btnAttack.Size = new System.Drawing.Size(75, 23);
             this.btnAttack.TabIndex = 4;
@@ -102,7 +105,7 @@
             // btnRight
             // 
             this.btnRight.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRight.Location = new System.Drawing.Point(174, 386);
+            this.btnRight.Location = new System.Drawing.Point(174, 456);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(75, 23);
             this.btnRight.TabIndex = 5;
@@ -113,7 +116,7 @@
             // btnUp
             // 
             this.btnUp.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnUp.Location = new System.Drawing.Point(93, 357);
+            this.btnUp.Location = new System.Drawing.Point(93, 427);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(75, 23);
             this.btnUp.TabIndex = 6;
@@ -123,7 +126,8 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(174, 415);
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLoad.Location = new System.Drawing.Point(174, 485);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 7;
@@ -133,7 +137,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 415);
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.Location = new System.Drawing.Point(12, 485);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 8;
@@ -144,18 +149,18 @@
             // cmbEnemies
             // 
             this.cmbEnemies.FormattingEnabled = true;
-            this.cmbEnemies.Location = new System.Drawing.Point(255, 357);
+            this.cmbEnemies.Location = new System.Drawing.Point(276, 396);
             this.cmbEnemies.Name = "cmbEnemies";
-            this.cmbEnemies.Size = new System.Drawing.Size(161, 23);
+            this.cmbEnemies.Size = new System.Drawing.Size(369, 23);
             this.cmbEnemies.TabIndex = 9;
             this.cmbEnemies.SelectedIndexChanged += new System.EventHandler(this.cmbEnemies_SelectedIndexChanged);
             // 
             // cmbItems
             // 
             this.cmbItems.FormattingEnabled = true;
-            this.cmbItems.Location = new System.Drawing.Point(255, 415);
+            this.cmbItems.Location = new System.Drawing.Point(276, 454);
             this.cmbItems.Name = "cmbItems";
-            this.cmbItems.Size = new System.Drawing.Size(161, 23);
+            this.cmbItems.Size = new System.Drawing.Size(369, 23);
             this.cmbItems.TabIndex = 10;
             this.cmbItems.SelectedIndexChanged += new System.EventHandler(this.cmbItems_SelectedIndexChanged);
             // 
@@ -163,7 +168,7 @@
             // 
             this.lblEnemiesList.AutoSize = true;
             this.lblEnemiesList.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEnemiesList.Location = new System.Drawing.Point(255, 338);
+            this.lblEnemiesList.Location = new System.Drawing.Point(276, 377);
             this.lblEnemiesList.Name = "lblEnemiesList";
             this.lblEnemiesList.Size = new System.Drawing.Size(56, 16);
             this.lblEnemiesList.TabIndex = 11;
@@ -174,7 +179,7 @@
             // 
             this.lblItemsList.AutoSize = true;
             this.lblItemsList.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblItemsList.Location = new System.Drawing.Point(255, 389);
+            this.lblItemsList.Location = new System.Drawing.Point(276, 428);
             this.lblItemsList.Name = "lblItemsList";
             this.lblItemsList.Size = new System.Drawing.Size(42, 16);
             this.lblItemsList.TabIndex = 12;
@@ -185,17 +190,53 @@
             // 
             this.lblDialoge.AutoSize = true;
             this.lblDialoge.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDialoge.Location = new System.Drawing.Point(255, 206);
+            this.lblDialoge.Location = new System.Drawing.Point(424, 154);
             this.lblDialoge.Name = "lblDialoge";
             this.lblDialoge.Size = new System.Drawing.Size(56, 16);
             this.lblDialoge.TabIndex = 13;
             this.lblDialoge.Text = "Dialoge";
             // 
+            // btnShop1
+            // 
+            this.btnShop1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnShop1.Location = new System.Drawing.Point(276, 483);
+            this.btnShop1.Name = "btnShop1";
+            this.btnShop1.Size = new System.Drawing.Size(119, 23);
+            this.btnShop1.TabIndex = 15;
+            this.btnShop1.Text = "button2";
+            this.btnShop1.UseVisualStyleBackColor = true;
+            this.btnShop1.Click += new System.EventHandler(this.btnShop1_Click);
+            // 
+            // btnShop2
+            // 
+            this.btnShop2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnShop2.Location = new System.Drawing.Point(401, 483);
+            this.btnShop2.Name = "btnShop2";
+            this.btnShop2.Size = new System.Drawing.Size(119, 23);
+            this.btnShop2.TabIndex = 16;
+            this.btnShop2.Text = "btnShop2";
+            this.btnShop2.UseVisualStyleBackColor = true;
+            this.btnShop2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnShop3
+            // 
+            this.btnShop3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnShop3.Location = new System.Drawing.Point(526, 483);
+            this.btnShop3.Name = "btnShop3";
+            this.btnShop3.Size = new System.Drawing.Size(119, 23);
+            this.btnShop3.TabIndex = 17;
+            this.btnShop3.Text = "button2";
+            this.btnShop3.UseVisualStyleBackColor = true;
+            this.btnShop3.Click += new System.EventHandler(this.btnShop3_Click);
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 450);
+            this.ClientSize = new System.Drawing.Size(657, 518);
+            this.Controls.Add(this.btnShop3);
+            this.Controls.Add(this.btnShop2);
+            this.Controls.Add(this.btnShop1);
             this.Controls.Add(this.lblDialoge);
             this.Controls.Add(this.lblItemsList);
             this.Controls.Add(this.lblEnemiesList);
@@ -234,5 +275,8 @@
         private Label lblEnemiesList;
         private Label lblItemsList;
         private Label lblDialoge;
+        private Button btnShop1;
+        private Button btnShop2;
+        private Button btnShop3;
     }
 }

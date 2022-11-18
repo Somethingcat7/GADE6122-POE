@@ -19,7 +19,8 @@ namespace GADE6122_POE.Tiles
             Enemy,
             Gold,
             Weapon,
-            Empty
+            Empty,
+            LEADER
         }
 
         //Public Constructor

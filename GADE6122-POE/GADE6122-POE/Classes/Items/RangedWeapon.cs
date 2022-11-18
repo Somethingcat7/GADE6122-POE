@@ -8,13 +8,15 @@ namespace GADE6122_POE.Classes.Items
 {
     [Serializable]
 
-    public enum RangedTypes
-    {
-        RIFLE,
-        LONGBOW,
-    }
+    
     class RangedWeapon : Weapon
     {
+        public enum RangedTypes
+        {
+        RIFLE,
+        LONGBOW,
+        }
+
         public RangedWeapon(RangedTypes types, int x = 0, int y = 0) : base(x, y) 
         {
             switch (types)

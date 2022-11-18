@@ -30,6 +30,8 @@ namespace GADE6122_POE.Classes
         private static readonly char smpMonTile = 'S';
         private static readonly char mageTile = 'M';
         private static readonly char goldTile = '$';
+        private static readonly char leaderTile = 'L';
+        private static readonly char weaponTile = 'W';
 
         public override string ToString()
         {
@@ -73,7 +75,16 @@ namespace GADE6122_POE.Classes
                     {
                         chrMap[i, j] = goldTile;
                     }
-
+                    //Leader tile placed
+                    if (map.TilesMap[i,j] is Leader)
+                    {
+                        chrMap[i, j] = leaderTile;
+                    }
+                    //Weapon tile placed
+                    if (map.TilesMap[i,j].GetType() == typeof(RangedWeapon) || map.TilesMap[i, j].GetType() == typeof(MeleeWeapon))
+                    {
+                        chrMap[i, j] = weaponTile;
+                    }
                     strMap += chrMap[i, j];
                 }
 
